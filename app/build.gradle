@@ -22,3 +22,20 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+android {
+    signingConfigs {
+        release {
+            storeFile file("M:\\azki.keystore")
+            storePassword "TODO"
+            keyAlias "azki"
+            keyPassword "TODO"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+}
